@@ -1,1 +1,6 @@
 rootProject.name = 'ResttemplateMultiModules'
+include 'contract'
+include 'impl'
+include 'integration'
+include 'common'
+
