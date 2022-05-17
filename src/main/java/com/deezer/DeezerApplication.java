@@ -1,13 +1,13 @@
-package com.example.resttemplatemultimodules;
+package com.deezer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ResttemplateMultiModulesApplication {
+public class DeezerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ResttemplateMultiModulesApplication.class, args);
+        SpringApplication.run(DeezerApplication.class, args);
     }
 
 }

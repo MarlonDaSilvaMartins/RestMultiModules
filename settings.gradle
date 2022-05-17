@@ -1,6 +1,6 @@
-rootProject.name = 'ResttemplateMultiModules'
-include 'contract'
-include 'impl'
+rootProject.name = 'deezer'
 include 'integration'
+include 'impl'
+include 'contract'
 include 'common'
 
