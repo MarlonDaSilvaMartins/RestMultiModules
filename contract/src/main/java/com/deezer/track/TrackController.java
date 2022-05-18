@@ -15,8 +15,8 @@ public class TrackController {
 
     TrackControllerFacade trackControllerFacade;
 
-    @GetMapping("v1/artist/{trackId}")
     @ApiOperation(value = "find track")
+    @GetMapping("/{trackId}")
     public TrackControllerResponse findTrack(@PathVariable String trackId){
         return trackControllerFacade.findTrack(trackId);
     }

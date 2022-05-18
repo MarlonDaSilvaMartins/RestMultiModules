@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "v1/artist")
+@RequestMapping("v1/artist")
 @Api(value = "Artist")
 public class ArtistController {
     ArtistControllerFacade artistControllerFacade;
 
-    @GetMapping("/{id}")
     @ApiOperation(value = "find artist")
+    @GetMapping("/{id}")
     public ArtistControllerResponse findArtist(@PathVariable String id){
         return artistControllerFacade.findArtist(id);
     }
 
+    @ApiOperation(value = "delete artist")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value = "delete artist")
     public void deleteArtist(@PathVariable String id){
         artistControllerFacade.deleteArtist(id);
     }
