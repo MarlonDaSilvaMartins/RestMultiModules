@@ -1,6 +1,7 @@
 package com.deezer.track;
 
 import com.deezer.track.model.response.TrackControllerResponse;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +15,9 @@ public class TrackController {
 
     TrackControllerFacade trackControllerFacade;
 
-    @GetMapping("/{trackId}")
-    public TrackControllerResponse findArtist(@PathVariable String trackId){
+    @GetMapping("v1/artist/{trackId}")
+    @ApiOperation(value = "find track")
+    public TrackControllerResponse findTrack(@PathVariable String trackId){
         return trackControllerFacade.findTrack(trackId);
     }
 }
