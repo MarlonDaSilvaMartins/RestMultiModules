@@ -8,7 +8,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 
-import static com.deezer.artist.stub.ArtistServiceFacadeStub.*;
+import static com.deezer.artist.servicestub.ArtistServiceFacadeStub.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
