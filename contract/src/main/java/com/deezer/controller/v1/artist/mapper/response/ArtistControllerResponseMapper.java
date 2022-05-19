@@ -1,6 +1,6 @@
-package com.deezer.artist.mapper.response;
+package com.deezer.controller.v1.artist.mapper.response;
 
-import com.deezer.artist.model.response.ArtistControllerResponse;
+import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
 import com.deezer.artist.model.response.ArtistServiceResponse;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

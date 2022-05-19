@@ -1,6 +1,6 @@
 package com.deezer.artist.controllerstub;
 
-import com.deezer.artist.model.response.ArtistControllerResponse;
+import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
 import com.deezer.artist.model.response.ArtistServiceResponse;
 
 public class ArtistControllerFacadeStub {

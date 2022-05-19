@@ -1,6 +1,6 @@
-package com.deezer.track;
+package com.deezer.controller.v1.track;
 
-import com.deezer.track.model.response.TrackControllerResponse;
+import com.deezer.controller.v1.track.model.response.TrackControllerResponse;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

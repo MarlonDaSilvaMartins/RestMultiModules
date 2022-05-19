@@ -1,5 +1,7 @@
 package com.deezer.artist;
 
+import com.deezer.controller.v1.artist.ArtistController;
+import com.deezer.controller.v1.artist.ArtistControllerFacade;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

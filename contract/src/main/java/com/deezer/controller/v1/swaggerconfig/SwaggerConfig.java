@@ -1,4 +1,4 @@
-package com.deezer.swaggerconfig;
+package com.deezer.controller.v1.swaggerconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

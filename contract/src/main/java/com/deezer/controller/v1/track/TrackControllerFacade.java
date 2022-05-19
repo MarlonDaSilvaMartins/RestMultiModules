@@ -1,10 +1,11 @@
-package com.deezer.track;
+package com.deezer.controller.v1.track;
 
-import com.deezer.track.model.response.TrackControllerResponse;
+import com.deezer.controller.v1.track.model.response.TrackControllerResponse;
+import com.deezer.track.TrackServiceFacade;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import static com.deezer.track.mapper.response.TrackServiceResponseMapper.toControllerResponse;
+import static com.deezer.controller.v1.track.mapper.response.TrackServiceResponseMapper.toControllerResponse;
 
 @Component
 @AllArgsConstructor

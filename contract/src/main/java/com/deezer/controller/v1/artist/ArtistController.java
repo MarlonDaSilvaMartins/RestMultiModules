@@ -1,6 +1,6 @@
-package com.deezer.artist;
+package com.deezer.controller.v1.artist;
 
-import com.deezer.artist.model.response.ArtistControllerResponse;
+import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;

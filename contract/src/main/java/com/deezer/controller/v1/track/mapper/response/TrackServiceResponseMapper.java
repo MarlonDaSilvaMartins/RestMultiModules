@@ -1,6 +1,6 @@
-package com.deezer.track.mapper.response;
+package com.deezer.controller.v1.track.mapper.response;
 
-import com.deezer.track.model.response.TrackControllerResponse;
+import com.deezer.controller.v1.track.model.response.TrackControllerResponse;
 import com.deezer.track.model.response.TrackServiceResponse;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

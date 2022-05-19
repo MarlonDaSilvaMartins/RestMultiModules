@@ -1,4 +1,4 @@
-package com.deezer.track.model.response;
+package com.deezer.controller.v1.track.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

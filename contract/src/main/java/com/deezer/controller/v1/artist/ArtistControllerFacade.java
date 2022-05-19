@@ -1,7 +1,8 @@
-package com.deezer.artist;
+package com.deezer.controller.v1.artist;
 
-import com.deezer.artist.mapper.response.ArtistControllerResponseMapper;
-import com.deezer.artist.model.response.ArtistControllerResponse;
+import com.deezer.artist.ArtistServiceFacade;
+import com.deezer.controller.v1.artist.mapper.response.ArtistControllerResponseMapper;
+import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
 import com.deezer.exceptions.datanotfound.DataNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;

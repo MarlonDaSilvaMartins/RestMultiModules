@@ -1,5 +1,6 @@
 package com.deezer.artist;
 
+import com.deezer.controller.v1.artist.ArtistControllerFacade;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
