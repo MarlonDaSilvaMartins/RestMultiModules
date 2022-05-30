@@ -1,6 +1,7 @@
-package com.deezer.artist;
+package com.deezer.controller.v1.artist;
 
-import com.deezer.controller.v1.artist.ArtistControllerFacade;
+import com.deezer.artist.ArtistServiceFacade;
+import com.deezer.controller.v1.artist.artistcontrollerstub.ArtistControllerFacadeStub;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -9,8 +10,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 
-import static com.deezer.artist.artistcontrollerstub.ArtistControllerFacadeStub.artistControllerResponseExpectedStub;
-import static com.deezer.artist.artistcontrollerstub.ArtistControllerFacadeStub.artistControllerResponseStub;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.*;
@@ -26,8 +25,8 @@ class ArtistControllerFacadeTest {
 
     @Test
     void findArtistReturnArtistController() {
-        var expected = artistControllerResponseExpectedStub();
-        var response = artistControllerResponseStub();
+        var expected = ArtistControllerFacadeStub.artistControllerResponseExpectedStub();
+        var response = ArtistControllerFacadeStub.artistControllerResponseStub();
 
         when(artistServiceFacade.findArtist("13"))
                 .thenReturn(response);

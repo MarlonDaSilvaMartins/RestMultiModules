@@ -1,7 +1,6 @@
-package com.deezer.artist;
+package com.deezer.controller.v1.artist;
 
-import com.deezer.controller.v1.artist.ArtistController;
-import com.deezer.controller.v1.artist.ArtistControllerFacade;
+import com.deezer.controller.v1.artist.artistcontrollerstub.ArtistControllerStub;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,8 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static com.deezer.artist.artistcontrollerstub.ArtistControllerStub.artistControllerResponse;
-import static com.deezer.artist.artistcontrollerstub.ArtistControllerStub.artistControllerResponseExpect;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -30,8 +27,8 @@ class ArtistControllerTest {
 
     @Test
     void whenFindArtistAndReturnArtistController() throws Exception {
-        var artistControllerResponse = artistControllerResponse();
-        var artistControllerExpect = artistControllerResponseExpect();
+        var artistControllerResponse = ArtistControllerStub.artistControllerResponse();
+        var artistControllerExpect = ArtistControllerStub.artistControllerResponseExpect();
 
         Mockito.when(artistControllerFacade.findArtist("13"))
                 .thenReturn(artistControllerResponse);
@@ -49,7 +46,6 @@ class ArtistControllerTest {
 
     @Test
     void whenDeleteArtistReturnNothing() throws Exception {
-
         mvc.perform(MockMvcRequestBuilders
                         .delete("http://localhost:8080/v1/artist/13"))
                 .andExpect(status().isNoContent());
