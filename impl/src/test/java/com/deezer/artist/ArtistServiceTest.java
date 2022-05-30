@@ -15,7 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import java.util.Optional;
 
-import static com.deezer.artist.servicestub.ArtistServiceStub.*;
+import static com.deezer.artist.artistservicestub.ArtistServiceStub.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;

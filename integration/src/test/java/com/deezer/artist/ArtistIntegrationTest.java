@@ -22,8 +22,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import static com.deezer.artist.integrationstub.ArtistIntegrationStub.artistIntegrationResponse;
-import static com.deezer.artist.integrationstub.ArtistIntegrationStub.artistIntegrationResponseExpect;
+import static com.deezer.artist.artistintegrationstub.ArtistIntegrationStub.artistIntegrationResponse;
+import static com.deezer.artist.artistintegrationstub.ArtistIntegrationStub.artistIntegrationResponseExpect;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 

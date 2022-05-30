@@ -1,4 +1,4 @@
-package com.deezer.artist.servicestub;
+package com.deezer.artist.artistservicestub;
 
 import com.deezer.artist.model.response.ArtistServiceResponse;
 import com.deezer.repository.entity.ArtistEntity;

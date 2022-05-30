@@ -13,8 +13,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static com.deezer.artist.controllerstub.ArtistControllerStub.artistControllerResponse;
-import static com.deezer.artist.controllerstub.ArtistControllerStub.artistControllerResponseExpect;
+import static com.deezer.artist.artistcontrollerstub.ArtistControllerStub.artistControllerResponse;
+import static com.deezer.artist.artistcontrollerstub.ArtistControllerStub.artistControllerResponseExpect;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

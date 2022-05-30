@@ -1,4 +1,4 @@
-package com.deezer.artist.controllerstub;
+package com.deezer.artist.artistcontrollerstub;
 
 import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
 import com.deezer.repository.entity.ArtistEntity;

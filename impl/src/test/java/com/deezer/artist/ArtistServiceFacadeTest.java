@@ -8,9 +8,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 
-import static com.deezer.artist.servicestub.ArtistServiceFacadeStub.*;
+import static com.deezer.artist.artistservicestub.ArtistServiceFacadeStub.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = {ArtistServiceFacade.class, ArtistService.class})
@@ -26,7 +27,7 @@ class ArtistServiceFacadeTest {
         var expected = artistServiceResponseExpectedStub();
         var findByIdResponse = artistEntityOptionalStub();
 
-        Mockito.when(artistService.findArtistById("13"))
+        when(artistService.findArtistById("13"))
                 .thenReturn(findByIdResponse);
 
         var actual = artistServiceFacade.findArtist("13");
@@ -39,7 +40,7 @@ class ArtistServiceFacadeTest {
         var expected = artistServiceResponseExpectedStub();
         var serviceResponse = artistServiceResponseStub();
 
-        Mockito.when(artistService.findArtistIntegration("13"))
+        when(artistService.findArtistIntegration("13"))
                 .thenReturn(serviceResponse);
 
         var actual = artistServiceFacade.findArtist("13");
@@ -49,11 +50,11 @@ class ArtistServiceFacadeTest {
 
     @Test
     void whenDeleteArtistReturnNothing() {
-        Mockito.doNothing().when(artistService).deleteArtist("13");
+        doNothing().when(artistService).deleteArtist("13");
 
         artistServiceFacade.deleteArtist("13");
 
-        var actual = Mockito.verify(this.artistService, Mockito.atMostOnce()).findArtistById("13");
+        var actual = verify(this.artistService, atMostOnce()).findArtistById("13");
 
         assertNull(actual);
     }

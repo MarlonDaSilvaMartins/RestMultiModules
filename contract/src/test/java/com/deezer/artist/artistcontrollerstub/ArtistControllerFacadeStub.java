@@ -1,10 +1,11 @@
-package com.deezer.artist.integrationstub;
+package com.deezer.artist.artistcontrollerstub;
 
-import com.deezer.artist.model.response.ArtistIntegrationResponse;
+import com.deezer.controller.v1.artist.model.response.ArtistControllerResponse;
+import com.deezer.artist.model.response.ArtistServiceResponse;
 
-public class ArtistIntegrationStub {
-    public static ArtistIntegrationResponse artistIntegrationResponseExpect() {
-        return ArtistIntegrationResponse.builder()
+public class ArtistControllerFacadeStub {
+    public static ArtistControllerResponse artistControllerResponseExpectedStub(){
+        return ArtistControllerResponse.builder()
                 .name("Eminem")
                 .id("13")
                 .link("https://www.deezer.com/artist/13")
@@ -17,8 +18,8 @@ public class ArtistIntegrationStub {
                 .build();
     }
 
-    public static ArtistIntegrationResponse artistIntegrationResponse() {
-        return ArtistIntegrationResponse.builder()
+    public static ArtistServiceResponse artistControllerResponseStub(){
+        return ArtistServiceResponse.builder()
                 .name("Eminem")
                 .id("13")
                 .link("https://www.deezer.com/artist/13")
