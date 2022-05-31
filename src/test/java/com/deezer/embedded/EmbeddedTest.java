@@ -2,13 +2,18 @@ package com.deezer.embedded;
 
 import com.deezer.artist.ArtistIntegration;
 import com.deezer.artist.ArtistService;
+import com.deezer.artist.ArtistServiceFacade;
+import com.deezer.controller.v1.artist.ArtistController;
+import com.deezer.controller.v1.artist.ArtistControllerFacade;
 import com.deezer.repository.ArtistRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -27,16 +32,20 @@ import static com.deezer.embedded.embeddedstub.EmbeddedStub.artistEntityStub;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
+//@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
+@WebMvcTest(ArtistController.class)
+@AutoConfigureDataMongo
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class})
+@ContextConfiguration(classes = {ArtistController.class, ArtistControllerFacade.class, ArtistServiceFacade.class,
+        ArtistService.class, ArtistRepository.class})
+//@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class})
 @EnableMongoRepositories("com.deezer.repository")
 @TestPropertySource(properties = "spring.mongodb.embedded.version=3.4.5")
 class EmbeddedTest {
 //    @Autowired
 //    WebApplicationContext webApplicationContext;
-//
-//    MockMvc mvc;
+    @Autowired
+    MockMvc mvc;
 
     @Autowired
     ArtistService artistService;
@@ -59,11 +68,11 @@ class EmbeddedTest {
     void whenDeleteTrackReturnNothing() throws Exception {
         String artistId = "13";
 
-        artistService.deleteArtist(artistId);
+//        artistService.deleteArtist(artistId);
 
-//        mvc.perform(MockMvcRequestBuilders
-//                        .delete("http://localhost:8080/v1/artist/13"))
-//                .andExpect(status().isNoContent());
+        mvc.perform(MockMvcRequestBuilders
+                        .delete("http://localhost:8080/v1/artist/".concat(artistId)))
+                .andExpect(status().isNoContent());
 
         assertEquals(Optional.empty(),artistService.findArtistById(artistId));
     }
