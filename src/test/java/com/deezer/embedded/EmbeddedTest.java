@@ -33,19 +33,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
-@WebMvcTest(ArtistController.class)
+//@WebMvcTest
 @AutoConfigureDataMongo
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {ArtistController.class, ArtistControllerFacade.class, ArtistServiceFacade.class,
-        ArtistService.class, ArtistRepository.class})
-//@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class})
+//@ContextConfiguration(classes = {ArtistController.class, ArtistControllerFacade.class, ArtistServiceFacade.class,
+//        ArtistService.class, ArtistRepository.class})
+@ContextConfiguration(classes = {ArtistService.class, ArtistRepository.class})
 @EnableMongoRepositories("com.deezer.repository")
 @TestPropertySource(properties = "spring.mongodb.embedded.version=3.4.5")
 class EmbeddedTest {
-//    @Autowired
-//    WebApplicationContext webApplicationContext;
-    @Autowired
-    MockMvc mvc;
+////    @Autowired
+//    MockMvc mvc;
 
     @Autowired
     ArtistService artistService;
@@ -68,11 +66,11 @@ class EmbeddedTest {
     void whenDeleteTrackReturnNothing() throws Exception {
         String artistId = "13";
 
-//        artistService.deleteArtist(artistId);
+        artistService.deleteArtist(artistId);
 
-        mvc.perform(MockMvcRequestBuilders
-                        .delete("http://localhost:8080/v1/artist/".concat(artistId)))
-                .andExpect(status().isNoContent());
+//        mvc.perform(MockMvcRequestBuilders
+//                        .delete("http://localhost:8080/v1/artist/".concat(artistId)))
+//                .andExpect(status().isNoContent());
 
         assertEquals(Optional.empty(),artistService.findArtistById(artistId));
     }
