@@ -1,4 +1,4 @@
-package com.deezer.embedded.embeddedstub;
+package com.deezer.artist.embedded.embeddedstub;
 
 import com.deezer.repository.entity.ArtistEntity;
 
